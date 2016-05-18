@@ -1,1 +1,2 @@
-# 多线程下载程序，可以断点续传
+# 多线程下载原理请参考 http://www.jianshu.com/p/f595f388b00c
+# 简单实现的HttpClient 请参考http://www.jianshu.com/p/8e22dd785ec7
