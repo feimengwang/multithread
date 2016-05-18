@@ -13,4 +13,9 @@ public class HttpHead extends BaseHttpMethod {
 	public HttpHead(String url) {
 		super(url);
 	}
+
+	@Override
+	protected BaseBuilder getBuilder() {
+		return new HeadConnectBuilder(this);
+	}
 }

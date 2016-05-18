@@ -13,4 +13,9 @@ public class HttpGet extends BaseHttpMethod {
 	public HttpGet(String url) {
 		super(url);
 	}
+
+	@Override
+	protected BaseBuilder getBuilder() {
+		return new GetConnectBuilder(this);
+	}
 }

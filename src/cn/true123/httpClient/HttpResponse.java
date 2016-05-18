@@ -33,6 +33,14 @@ public class HttpResponse implements IHttpResponse {
 
 	@Override
 	public String getContent() {
+			try {
+				if(inputStream==null){
+					getInputStream();
+				}
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		if (inputStream != null) {
 			StringBuffer content = new StringBuffer();
 			BufferedInputStream bufferInputStream = new BufferedInputStream(
@@ -54,7 +62,6 @@ public class HttpResponse implements IHttpResponse {
 
 	@Override
 	public Map<String, List<String>> getHeaders() {
-		// TODO Auto-generated method stub
 		return null != con ? con.getHeaderFields() : null;
 	}
 
