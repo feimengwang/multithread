@@ -1,4 +1,4 @@
-package cn.true123.sample;
+package cn.true123.cn.test;
 
 import cn.true123.download.DownLoader;
 import cn.true123.download.DownLoaderListener;
