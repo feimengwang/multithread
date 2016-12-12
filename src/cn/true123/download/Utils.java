@@ -20,13 +20,6 @@ import cn.true123.httpClient.IHttpResponse;
 
 public class Utils {
 
-	public static void main(String[] args) {
-		//test("http://ca-toronto-dl02.jazz.net/mirror/downloads/rational-team-concert/5.0.2/5.0.2/RTC-Eclipse-Client-repo-5.0.2.zip");
-		//test("http://ftp.kaist.ac.kr/eclipse/technology/epp/downloads/release/mars/2/eclipse-php-mars-2-win32-x86_64.zip");
-		test("http://jsdx.down.chinaz.com/%C1%F4%D1%D4%C8%D5%BC%C7/o-blog2.6.rar");
-		//test("http://blog.csdn.net/xiangsuixinsheng/article/details/6871868");
-	}
-
 	public static DLModel getModel(String surl) {
 		DLModel mDLModel = new DLModel();
 		mDLModel.setUrl(surl);
@@ -172,6 +165,9 @@ public class Utils {
 	public static String getFileName(String url) {
 		if (url != null) {
 			String fileName = "";
+			if(url.lastIndexOf("?")>=0){
+				url = url.substring(0, url.lastIndexOf("?"));
+			}
 			int split = url.lastIndexOf('/');
 			if (split != -1 && split < url.length()) {
 				fileName = url.trim().substring(url.lastIndexOf('/') + 1);
